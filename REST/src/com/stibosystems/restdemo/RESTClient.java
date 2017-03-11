@@ -38,23 +38,44 @@ public class RESTClient {
          * XML Should look something like this:
          <BackgroundProcess>
          <Active>
-         <Process Created="2016-02-19 12:48:49 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 12:48:49)" Finished="2016-02-19 12:48:54 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 12:48:54 CET" Status="failed" ID="BGP_198003"/>
-         <Process Created="2016-02-19 13:00:47 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 13:00:47)" Finished="2016-02-19 13:00:52 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 13:00:52 CET" Status="failed" ID="BGP_198009"/>
+             <Process Created="2016-02-19 12:48:49 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 12:48:49)" Finished="2016-02-19 12:48:54 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 12:48:54 CET" Status="failed" ID="BGP_198003"/>
+             <Process Created="2016-02-19 13:00:47 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 13:00:47)" Finished="2016-02-19 13:00:52 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 13:00:52 CET" Status="failed" ID="BGP_198009"/>
          </Active>
+         <Ended>
+             <Process Created="2016-02-19 12:48:49 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 12:48:49)" Finished="2016-02-19 12:48:54 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 12:48:54 CET" Status="failed" ID="BGP_198003"/>
+             <Process Created="2016-02-19 13:00:47 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 13:00:47)" Finished="2016-02-19 13:00:52 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 13:00:52 CET" Status="failed" ID="BGP_198009"/>
+         </Ended>
+         <EndedWithError>
+             <Process Created="2016-02-19 12:48:49 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 12:48:49)" Finished="2016-02-19 12:48:54 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 12:48:54 CET" Status="failed" ID="BGP_198003"/>
+             <Process Created="2016-02-19 13:00:47 CET" Description="Import started for endpoint 'Apparel Hotfolder' (2016-02-19 13:00:47)" Finished="2016-02-19 13:00:52 CET" NumberOfErrors="2" NumberOfWarnings="1" Progress="0" StartedBy="IARE" Started="2016-02-19 13:00:52 CET" Status="failed" ID="BGP_198009"/>
+         </EndedWithError>
          </BackgroundProcess>
          */
 
         Document responseDoc = parseXML(conn.getInputStream());
 
         //There can be only one, as all active BGPs are inside the same tag
-        NodeList activeTagNodeList = responseDoc.getElementsByTagName("Active");
 
-        if(activeTagNodeList.getLength() <= 0) {
+        List<BGPImportStatus> bgpImportStatuses = new LinkedList<>();
+        bgpImportStatuses.addAll(getImportStatusesFromTag(responseDoc, "Active"));
+        bgpImportStatuses.addAll(getImportStatusesFromTag(responseDoc, "Ended"));
+        bgpImportStatuses.addAll(getImportStatusesFromTag(responseDoc, "EndedWithError"));
+
+        //Drop the connection
+        conn.disconnect();
+
+        return bgpImportStatuses;
+    }
+
+    private List<BGPImportStatus> getImportStatusesFromTag(Document document, String tagString) {
+        NodeList tags = document.getElementsByTagName(tagString);
+
+        if(tags == null || tags.getLength() <= 0) {
             return new LinkedList<>();
         }
 
         //Get the Active-node
-        Node activeTag = activeTagNodeList.item(0);
+        Node activeTag = tags.item(0);
 
         List<BGPImportStatus> bgpIDs = new LinkedList<>();
         //Find the IDs
@@ -64,12 +85,9 @@ public class RESTClient {
             fileImportStatus.bgpID = bgpNode.getAttributes().getNamedItem("ID").getTextContent();
             fileImportStatus.progess = bgpNode.getAttributes().getNamedItem("Progress").getTextContent();
             fileImportStatus.status = bgpNode.getAttributes().getNamedItem("Status").getTextContent();
+            fileImportStatus.type = tagString;
             bgpIDs.add(fileImportStatus);
         }
-
-        //Drop the connection
-        conn.disconnect();
-
         return bgpIDs;
     }
 

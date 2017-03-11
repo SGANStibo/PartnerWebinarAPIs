@@ -7,9 +7,9 @@ import javax.sound.midi.Soundbank;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        RESTClient restClient = new RESTClient("enter system name here", "enter username here", "enter password here");
-        for(BGPImportStatus bgpImportStatus : restClient.getIEPBackgroundProcessIDs("Apparel%20Hotfolder")) {
-            System.out.println("Status on import of file " + restClient.getImportFileNameFromBGPExecutionReport(bgpImportStatus.bgpID) + ", status " + bgpImportStatus.status + ", progress " + bgpImportStatus.progess + "%, (BGP ID: " + bgpImportStatus.bgpID + ")") ;
+        RESTClient restClient = new RESTClient("", "", "");
+        for(BGPImportStatus bgpImportStatus : restClient.getIEPBackgroundProcessIDs("AssetAutoImport")) {
+            System.out.println("(" + bgpImportStatus.type + ") - Status on import of file " + restClient.getImportFileNameFromBGPExecutionReport(bgpImportStatus.bgpID) + ", status " + bgpImportStatus.status + ", progress " + bgpImportStatus.progess + "%, (BGP ID: " + bgpImportStatus.bgpID + ")") ;
         }
     }
 }

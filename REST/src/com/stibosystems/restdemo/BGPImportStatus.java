@@ -7,4 +7,5 @@ public class BGPImportStatus {
     String bgpID;
     String status;
     String progess;
+    String type;
 }
