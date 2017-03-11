@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws GetTopProductFault, QueryByAttributeFault, GetReferencesFault, CreateReferenceFault, QueryByNameFault {
         //Enter username / password here!
-        SOAPClient soapClient = new SOAPClient("", "");
+        SOAPClient soapClient = new SOAPClient(args[0], args[1]);
 
         String productAttribute = "ProductName";
         String productAttributeValue = "12069999";
