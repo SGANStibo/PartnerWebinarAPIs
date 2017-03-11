@@ -22,10 +22,12 @@ import com.stibo.portal.widget.text.textbox.TextBox;
 public class RetailProductNameEditorField implements EditorField<NoParameters, Node> {
     @Override
     public Widget createUi(final ComponentContext<NoParameters, Node, FieldController> context) {
+        //Get the node we're running on --- but remember, in "Design mode", it doesn't exist, and will be null!
         final Node node = context.getSelection();
 
         FlowPanel panel = new FlowPanel();
 
+        //Get the current name
         String retailProductNameCurrentValue;
         if (node != null) {
             retailProductNameCurrentValue = node.getValue("RetailProductName").getSimpleValue();
@@ -33,25 +35,32 @@ public class RetailProductNameEditorField implements EditorField<NoParameters, N
             retailProductNameCurrentValue = "";
         }
 
+        //And put it in the text box
         final TextBox textBox = new TextBox();
         textBox.setText(retailProductNameCurrentValue);
         panel.add(textBox);
         Stylist.setInlineStyle(textBox, "display", "block");
 
+        //Create the labe we'll use for the error (if any)
         final Label errorLabel = new Label();
         panel.add(errorLabel);
         Stylist.setInlineStyle(errorLabel, "display", "none");
         Stylist.setInlineStyle(errorLabel, "color", "red");
 
+        //Copy to final variable, to make usable inside anonymous class
         final String finalRetailProductNameCurrentValue = retailProductNameCurrentValue;
         textBox.addChangeListener(new ChangeListener() {
             @Override
             public void onChanged(ChangeEvent event) {
+                //Do the checks -
                 String retailProductNameNewValue = textBox.getText();
+
+                //Mark as dirty (= allow the user to try to press the "Save"-button) on the WebUI, if we've changed the value
                 if(finalRetailProductNameCurrentValue != null && retailProductNameNewValue != null) {
                     context.getController().markDirty(!retailProductNameNewValue.equals(finalRetailProductNameCurrentValue));
                 }
 
+                //But only mark valid if IsRetailProduct is "Yes" (or we want to remove the value)
                 if(node.getValue("IsRetailProduct").getSimpleValue().equals("Yes") || retailProductNameNewValue == null || retailProductNameNewValue.equals("")) {
                     context.getController().markValid(true);
                     Stylist.setInlineStyle(errorLabel, "display", "none");
