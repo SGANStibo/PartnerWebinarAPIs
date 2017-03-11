@@ -1,0 +1,77 @@
+/*
+ * THIS SOFTWARE AND THE DOCUMENTATION IS CREATED AND OWNED BY STIBO SYSTEMS A/S.
+ * ALL RIGHTS ARE RESERVED BY STIBO SYSTEMS. USE OF THE SOFTWARE AND DOCUMENTATION
+ * IS ONLY ALLOWED ACCORDING TO YOUR AGREEMENT WITH STIBO SYSTEMS OR AN AUTHORISED
+ * RESELLER. ANY UNAUTHORISED USE, COPYING OR REVERSE ENGINEERING WILL CONSTITUTE
+ * AN INFRINGEMENT OF COPYRIGHT. STIBO SYSTEMS MAKES NO REPRESENTATION TO THE
+ * APPROPRIATENESS OR FITNESS FOR PURPOSE.
+ */
+
+// Setup of version, dependencies, imports, names...
+
+version = '1.0.4'
+
+//Includes all WebUI components, for reference
+dependencies {
+    testCompile 'junit:junit:4.12'
+
+    compile	'com.stibo:com.stibo.core.domain:latest.integration'
+    compile	'com.stibo:com.stibo.framework:latest.integration'
+
+    compile	'com.stibo:com.stibo.portal.api:latest.integration'
+
+    compile	'com.stibo:com.stibo.portal.componenttype.action:latest.integration'
+    compile	'com.stibo:com.stibo.portal.componenttype.basic:latest.integration'
+    compile	'com.stibo:com.stibo.portal.componenttype.field:latest.integration'
+    compile	'com.stibo:com.stibo.portal.componenttype.homepagewidget:latest.integration'
+    compile	'com.stibo:com.stibo.portal.componenttype.screen:latest.integration'
+    compile 'com.stibo:com.stibo.portal.componenttype.mainareaheader:latest.integration'
+    compile 'com.stibo:com.stibo.portal.componenttype.cornerbar:latest.integration'
+
+    compile	'com.stibo:com.stibo.portal.widget.action:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.choice:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.element:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.formfield:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.homepage.widget:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.image:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.panel:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.popup:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.text:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.datagrid:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.nodeselectiondialog:latest.integration'
+    compile	'com.stibo:com.stibo.portal.widget.date:latest.integration'
+    compile 'com.stibo:com.stibo.portal.widget.file:latest.integration'
+
+    compile	'com.stibo:com.stibo.portal.parameter.screen:latest.integration'
+    compile 'com.stibo:com.stibo.portal.selection.neworexisting:latest.integration'
+    compile	'com.stibo:com.stibo.portal.style:latest.integration'
+    compile	'com.stibo:com.stibo.portal.stream:latest.integration'
+
+    compile	'com.stibo:com.stibo.portal.event.change:latest.integration'
+    compile	'com.stibo:com.stibo.portal.event.click:latest.integration'
+    compile	'com.stibo:com.stibo.portal.event.focus:latest.integration'
+
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+
+jar {
+	manifest {
+		// symbolicName is the name of the jar file; it is also used by SPOT when patching a STEP system.
+
+		//uncomment following line, and rename to an appropriate value
+		def jarName = "com.webinar.extensionapidemo"
+		symbolicName = jarName
+        archiveName = "${jarName}-${version}.jar"
+
+		// Must match the component name used when packaging the partner component with SPOT.
+
+		// uncomment following line, and rename to an appropriate value
+        def stiboOsgiComponentName = 'webinar-extensionapidemo'
+		instruction 'StiboOSGiComponent', "$stiboOsgiComponentName"
+
+		instruction 'Import-Package',
+		            '''com.stibo.*,
+                       javax.*'''
+	}
+}

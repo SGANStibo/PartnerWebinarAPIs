@@ -1,0 +1,31 @@
+.hello-header {
+    background-color: #DC5620;
+    padding: 6px;
+}
+
+.hello-header .title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.x-NodeSummaryHeader .gwt-Label {
+    color: black;
+}
+
+
+.x-form-layout {
+
+}
+
+.x-ActionButton {
+
+}
+
+.x-DatePicker .gwt-DatePicker {
+    width: 300px;
+}
+
+.x-CornerbarCalender  {
+    width: 100px;
+}

@@ -1,0 +1,68 @@
+/*
+ * THIS SOFTWARE AND THE DOCUMENTATION IS CREATED AND OWNED BY STIBO SYSTEMS A/S.
+ * ALL RIGHTS ARE RESERVED BY STIBO SYSTEMS. USE OF THE SOFTWARE AND DOCUMENTATION
+ * IS ONLY ALLOWED ACCORDING TO YOUR AGREEMENT WITH STIBO SYSTEMS OR AN AUTHORISED
+ * RESELLER. ANY UNAUTHORISED USE, COPYING OR REVERSE ENGINEERING WILL CONSTITUTE
+ * AN INFRINGEMENT OF COPYRIGHT. STIBO SYSTEMS MAKES NO REPRESENTATION TO THE
+ * APPROPRIATENESS OR FITNESS FOR PURPOSE.
+ */
+
+buildscript {
+    repositories{
+        flatDir{
+            dirs '../../lib'
+        }
+        repositories {
+            mavenCentral()
+        }
+    }
+
+    dependencies {
+        classpath 'com.stibo:com.stibo.gradle.plugin.partnerextension:1.0.0'
+    }
+
+}
+
+repositories {
+    flatDir{
+        dirs '../../lib'
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'osgi'
+
+apply plugin: 'partnerextension'
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+idea {
+    module{
+        downloadJavadoc = true
+    }
+}
+
+eclipse {
+    classpath {
+        downloadJavadoc = true
+    }
+}
+
+jar {
+	manifest {
+		// Do not export anything from the bundle
+		instruction 'Export-Package', "!*"
+	}
+}
+
+apply from :'partner.gradle'
+
+

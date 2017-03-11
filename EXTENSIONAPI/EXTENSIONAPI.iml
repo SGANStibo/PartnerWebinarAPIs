@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="EXTENSIONAPI" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="1.0.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/build/classes/main" />
+    <output-test url="file://$MODULE_DIR$/build/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.core.domain:15.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.framework:4.21.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.api:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.action:2.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.basic:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.field:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.homepagewidget:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.screen:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.mainareaheader:1.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.componenttype.cornerbar:1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.action:2.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.choice:2.12.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.element:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.formfield:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.homepage.widget:1.16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.image:2.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.panel:1.15.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.popup:2.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.text:2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.datagrid:2.2.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.nodeselectiondialog:1.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.date:1.6.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.widget.file:2.14.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.parameter.screen:1.10.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.selection.neworexisting:1.6.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.style:2.12.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.stream:3.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.event.change:1.13.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.event.click:1.13.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.stibo:com.stibo.portal.event.focus:2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+</module>
