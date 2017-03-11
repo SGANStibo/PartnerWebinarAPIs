@@ -43,12 +43,13 @@ public class RetailProductNameEditorField implements EditorField<NoParameters, N
         Stylist.setInlineStyle(errorLabel, "display", "none");
         Stylist.setInlineStyle(errorLabel, "color", "red");
 
+        final String finalRetailProductNameCurrentValue = retailProductNameCurrentValue;
         textBox.addChangeListener(new ChangeListener() {
             @Override
             public void onChanged(ChangeEvent event) {
                 String retailProductNameNewValue = textBox.getText();
-                if(retailProductNameCurrentValue != null && retailProductNameNewValue != null) {
-                    context.getController().markDirty(!retailProductNameNewValue.equals(retailProductNameCurrentValue));
+                if(finalRetailProductNameCurrentValue != null && retailProductNameNewValue != null) {
+                    context.getController().markDirty(!retailProductNameNewValue.equals(finalRetailProductNameCurrentValue));
                 }
 
                 if(node.getValue("IsRetailProduct").getSimpleValue().equals("Yes") || retailProductNameNewValue == null || retailProductNameNewValue.equals("")) {

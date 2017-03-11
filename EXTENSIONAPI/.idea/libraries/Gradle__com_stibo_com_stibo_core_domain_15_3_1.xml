@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.stibo:com.stibo.core.domain:15.3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../lib/com.stibo.core.domain-15.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../lib/com.stibo.core.domain-15.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

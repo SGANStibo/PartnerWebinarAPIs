@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.stibo:com.stibo.portal.componenttype.basic:1.16.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../lib/com.stibo.portal.componenttype.basic-1.16.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../lib/com.stibo.portal.componenttype.basic-1.16.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
