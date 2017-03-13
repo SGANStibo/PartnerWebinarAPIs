@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Configuration:
+<STEP-ProductInformation ResolveInlineRefs="true" FollowOverrideSubProducts="true">
+<Products ExportSize="Minimum">
+<Product>
+<Name/><AttributeLink/><ClassificationReference/><Product/>
+<ProductCrossReference/><AssetCrossReference/><EntityCrossReference/><Values/><CustomValues/><OverrideSubProduct/></Product></Products>
+<Entities ExportSize="Minimum">
+<Entity>
+<Name/><AttributeLink/><ClassificationCrossReference/><Entity/>
+<ProductCrossReference/><AssetCrossReference/><EntityCrossReference/><ContextCrossReference/><Values/><CustomValues/></Entity></Entities>
+</STEP-ProductInformation>
+
+Export from 12069999
+Classifications All
+Products "12069999"
+Assets All
+-->
+<STEP-ProductInformation ExportTime="2017-03-12 16:23:45" ExportContext="GL" ContextID="GL" WorkspaceID="Main" UseContextLocale="false">
+
+  <Qualifiers>
+    <Qualifier ID="Qualifier root">
+      <DimensionPointLink DimensionPointID="Qualifier root"/>
+      <Context ID="Belgian BE" Priority="4"/>
+      <Context ID="Context1" Priority="4"/>
+      <Context ID="Context2" Priority="4"/>
+      <Context ID="Context3" Priority="5"/>
+      <Context ID="Dutch NE" Priority="5"/>
+      <Context ID="GL" Priority="3"/>
+      <Context ID="Korean KR" Priority="4"/>
+    </Qualifier>
+    <Qualifier ID="en-US">
+      <DimensionPointLink DimensionPointID="en-US"/>
+      <Context ID="Context1" Priority="1"/>
+    </Qualifier>
+    <Qualifier ID="AllCountries">
+      <DimensionPointLink DimensionPointID="AllCountries"/>
+      <Context ID="Belgian BE" Priority="5"/>
+      <Context ID="Context1" Priority="5"/>
+      <Context ID="Context2" Priority="5"/>
+      <Context ID="Context3" Priority="6"/>
+      <Context ID="Dutch NE" Priority="6"/>
+      <Context ID="GL" Priority="4"/>
+      <Context ID="Korean KR" Priority="5"/>
+    </Qualifier>
+    <Qualifier ID="std.lang.all">
+      <DimensionPointLink DimensionPointID="std.lang.all"/>
+      <Context ID="Belgian BE" Priority="3"/>
+      <Context ID="Context1" Priority="3"/>
+      <Context ID="Context2" Priority="3"/>
+      <Context ID="Context3" Priority="4"/>
+      <Context ID="Dutch NE" Priority="4"/>
+      <Context ID="GL" Priority="2"/>
+      <Context ID="Korean KR" Priority="3"/>
+    </Qualifier>
+    <Qualifier ID="French">
+      <DimensionPointLink DimensionPointID="French"/>
+      <Context ID="Context2" Priority="1"/>
+    </Qualifier>
+    <Qualifier ID="German">
+      <DimensionPointLink DimensionPointID="German"/>
+      <Context ID="Context3" Priority="2"/>
+    </Qualifier>
+    <Qualifier ID="Dutch">
+      <DimensionPointLink DimensionPointID="Dutch"/>
+      <Context ID="Dutch NE" Priority="2"/>
+    </Qualifier>
+    <Qualifier ID="Brand Root">
+      <DimensionPointLink DimensionPointID="Brand Root"/>
+      <Context ID="Belgian BE" Priority="6"/>
+      <Context ID="Context1" Priority="6"/>
+      <Context ID="Context2" Priority="6"/>
+      <Context ID="Context3" Priority="7"/>
+      <Context ID="Dutch NE" Priority="7"/>
+      <Context ID="GL" Priority="5"/>
+      <Context ID="Korean KR" Priority="6"/>
+    </Qualifier>
+    <Qualifier ID="AND 2750969">
+      <DimensionPointLink DimensionPointID="Brand Root"/>
+      <DimensionPointLink DimensionPointID="Dutch"/>
+      <Context ID="Dutch NE" Priority="1"/>
+    </Qualifier>
+    <Qualifier ID="Belgian">
+      <DimensionPointLink DimensionPointID="Belgian"/>
+      <Context ID="Belgian BE" Priority="1"/>
+    </Qualifier>
+    <Qualifier ID="AND 2750973">
+      <DimensionPointLink DimensionPointID="Brand Root"/>
+      <DimensionPointLink DimensionPointID="German"/>
+      <Context ID="Context3" Priority="1"/>
+    </Qualifier>
+    <Qualifier ID="AND2752005">
+      <DimensionPointLink DimensionPointID="Brand Root"/>
+      <DimensionPointLink DimensionPointID="std.lang.all"/>
+      <Context ID="Belgian BE" Priority="2"/>
+      <Context ID="Context1" Priority="2"/>
+      <Context ID="Context2" Priority="2"/>
+      <Context ID="Context3" Priority="3"/>
+      <Context ID="Dutch NE" Priority="3"/>
+      <Context ID="GL" Priority="1"/>
+      <Context ID="Korean KR" Priority="2"/>
+    </Qualifier>
+    <Qualifier ID="Korean">
+      <DimensionPointLink DimensionPointID="Korean"/>
+      <Context ID="Korean KR" Priority="1"/>
+    </Qualifier>
+  </Qualifiers>
+
+  <Products>
+    <Product ID="12069999" UserTypeID="SalesItem" ParentID="196892">
+      <Name>12069999</Name>
+      <Values>
+        <Value AttributeID="IsRetailProduct">No</Value>
+        <Value AttributeID="ProductName">12069999</Value>
+        <ValueGroup AttributeID="Parent">
+          <Value Derived="true" DerivedContextID="Context2">Dresses</Value>
+          <Value Derived="true" DerivedContextID="Context1">Dresses</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">Dresses</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">Dresses</Value>
+          <Value Derived="true" DerivedContextID="Context3">Dresses</Value>
+          <Value Derived="true" DerivedContextID="GL">Dresses</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">Dresses</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="PriceAUD">
+          <Value Derived="true" DerivedContextID="Context2">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context1">0.00</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context3">0.00</Value>
+          <Value Derived="true" DerivedContextID="GL">0.00</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">0.00</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="Source"/>
+        <ValueGroup AttributeID="Path">
+          <Value Derived="true" DerivedContextID="Context2">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+          <Value Derived="true" DerivedContextID="Context1">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+          <Value Derived="true" DerivedContextID="Context3">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+          <Value Derived="true" DerivedContextID="GL">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">Apparel | Body Wear | Dresses | Dresses Sales Items | Dresses</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="PriceUSD">
+          <Value Derived="true" DerivedContextID="Context2">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context1">0.00</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context3">0.00</Value>
+          <Value Derived="true" DerivedContextID="GL">0.00</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">0.00</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="Price Inc VAT">
+          <Value Derived="true" DerivedContextID="Context2">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context1">0.00</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context3">0.00</Value>
+          <Value Derived="true" DerivedContextID="GL">0.00</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">0.00</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="GoogleID"/>
+        <ValueGroup AttributeID="GoogleImageLink"/>
+        <ValueGroup AttributeID="CompletenessScore">
+          <Value Derived="true" DerivedContextID="Context2">6.4935</Value>
+          <Value Derived="true" DerivedContextID="Context1">6.4935</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">6.4935</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">6.4935</Value>
+          <Value Derived="true" DerivedContextID="Context3">6.4935</Value>
+          <Value Derived="true" DerivedContextID="GL">6.4935</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">6.4935</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="GoogleDescription"/>
+        <ValueGroup AttributeID="SalesItemBrand"/>
+        <ValueGroup AttributeID="Completeness Warning">
+          <Value Derived="true" DerivedContextID="Context2">Less than 60% complete</Value>
+          <Value Derived="true" DerivedContextID="Context1">Less than 60% complete</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">Less than 60% complete</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">Less than 60% complete</Value>
+          <Value Derived="true" DerivedContextID="Context3">Less than 60% complete</Value>
+          <Value Derived="true" DerivedContextID="GL">Less than 60% complete</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">Less than 60% complete</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="Country_Codes_Warnings">
+          <Value Derived="true" DerivedContextID="Context2">There are no country code warnings</Value>
+          <Value Derived="true" DerivedContextID="Context1">There are no country code warnings</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">There are no country code warnings</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">There are no country code warnings</Value>
+          <Value Derived="true" DerivedContextID="Context3">There are no country code warnings</Value>
+          <Value Derived="true" DerivedContextID="GL">There are no country code warnings</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">There are no country code warnings</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="PriceEuro">
+          <Value Derived="true" DerivedContextID="Context2">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context1">0.00</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">0.00</Value>
+          <Value Derived="true" DerivedContextID="Context3">0.00</Value>
+          <Value Derived="true" DerivedContextID="GL">0.00</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">0.00</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="GTIN_Validation">
+          <Value Derived="true" DerivedContextID="Context2">GTIN 14 to short</Value>
+          <Value Derived="true" DerivedContextID="Context1">GTIN 14 to short</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">GTIN 14 to short</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">GTIN 14 to short</Value>
+          <Value Derived="true" DerivedContextID="Context3">GTIN 14 to short</Value>
+          <Value Derived="true" DerivedContextID="GL">GTIN 14 to short</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">GTIN 14 to short</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="ProductColourLookup"/>
+        <ValueGroup AttributeID="Completeness Status">
+          <Value Derived="true" DerivedContextID="Context2">Item Enrichment</Value>
+          <Value Derived="true" DerivedContextID="Context1">Item Enrichment</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">Item Enrichment</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">Item Enrichment</Value>
+          <Value Derived="true" DerivedContextID="Context3">Item Enrichment</Value>
+          <Value Derived="true" DerivedContextID="GL">Item Enrichment</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">Item Enrichment</Value>
+        </ValueGroup>
+        <ValueGroup AttributeID="ProductColour"/>
+        <ValueGroup AttributeID="RevisionComments">
+          <Value Derived="true" DerivedContextID="Context2">Complete approval</Value>
+          <Value Derived="true" DerivedContextID="Context1">Complete approval</Value>
+          <Value Derived="true" DerivedContextID="Dutch NE">Complete approval</Value>
+          <Value Derived="true" DerivedContextID="Belgian BE">Complete approval</Value>
+          <Value Derived="true" DerivedContextID="Context3">Complete approval</Value>
+          <Value Derived="true" DerivedContextID="GL">Complete approval</Value>
+          <Value Derived="true" DerivedContextID="Korean KR">Complete approval</Value>
+        </ValueGroup>
+      </Values>
+    </Product>
+  </Products>
+</STEP-ProductInformation>

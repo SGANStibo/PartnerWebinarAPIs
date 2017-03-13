@@ -1,0 +1,41 @@
+CREATE OR REPLACE PACKAGE <packagename> AS
+
+PROCEDURE <name of my report>;
+FUNCTION getgeneratorlist RETURN reportpck.generatorspectable;
+FUNCTION getparamlist RETURN reportpck.paramspectable;
+
+END <packagename>;
+/
+
+CREATE OR REPLACE package body <packagename> AS
+
+    vgenlist reportpck.generatorspectable;
+    vparamlist reportpck.paramspectable;
+
+    FUNCTION getgeneratorlist RETURN reportpck.generatorspectable is
+        BEGIN
+        RETURN vgenlist;
+        END;
+
+    FUNCTION getparamlist RETURN reportpck.paramspectable is
+        BEGIN
+        RETURN vparamlist;
+        END;
+
+  PROCEDURE <name of my report> IS
+    vdata         reportpck.fieldtable;
+  BEGIN
+    pimviewapipck.SETVIEWCONTEXT('GL', 'Main'); -- Set context/workspace
+  END <name of me report>;
+
+BEGIN
+        reportregistry.addmethod(vgenlist,'<name of my report>','<report group>','<name of report in gui>', '<long description>');
+
+END <packagename>;
+/
+
+show error
+
+exec reportregistry.register('<packagename>');
+
+commit;

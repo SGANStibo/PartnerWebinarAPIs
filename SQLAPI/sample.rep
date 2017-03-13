@@ -1,0 +1,86 @@
+CREATE OR REPLACE PACKAGE hierarchy AS
+
+PROCEDURE hierarchy(acontextid in varchar2, aworkspaceid in varchar2, arootproductid in varchar2);
+FUNCTION getgeneratorlist RETURN reportpck.generatorspectable;
+FUNCTION getparamlist RETURN reportpck.paramspectable;
+
+END hierarchy;
+/
+
+CREATE OR REPLACE package body hierarchy AS
+
+    vgenlist reportpck.generatorspectable;
+    vparamlist reportpck.paramspectable;
+
+  cursor fetch_sub_products(rootproductid number) is
+    select n.name,n.nodeid
+                from node n,
+                        (select e.childid, e.childtype,e.edgeid
+                        from edge e
+                        where e.childtype = 'p'
+                        connect by e.parenttype = prior e.childtype
+                                and e.parentid   = prior e.childid
+                                and e.edgetype  = 8
+                        start with e.parentid   = rootproductid
+                                and e.parenttype = 'p'
+                                and e.edgetype  = 8) e
+                where n.nodetype=e.childtype
+                and n.nodeid=e.childid
+                UNION SELECT n.name,n.nodeid FROM node n
+                WHERE n.nodeid=rootproductid
+                AND nodetype='p';
+
+    FUNCTION getgeneratorlist RETURN reportpck.generatorspectable is
+        BEGIN
+        RETURN vgenlist;
+        END;
+
+    FUNCTION getparamlist RETURN reportpck.paramspectable is
+        BEGIN
+        RETURN vparamlist;
+        END;
+  PROCEDURE hierarchy(acontextid in varchar2, aworkspaceid in varchar2, arootproductid in varchar2) IS
+    vdata         reportpck.fieldtable;
+    arootproductinternalid number;
+    internalProviderGLNid number;
+  BEGIN
+    --Log on to the context / workspace
+    pimviewapipck.SETVIEWCONTEXT(acontextid, aworkspaceid); -- Set context ID/workspace ID
+    reportpck.addreportheading('Extract hierarchy');
+    reportpck.addparameterrow('Context'||chr(9)||acontextid);
+    reportpck.addparameterrow('Workspace'||chr(9)||aworkspaceid);
+    reportpck.addparameterrow('Root node'||chr(9)||arootproductid||' ['||pimviewapipck.getcontextname('p',arootproductid)||']');
+
+    vdata(1):='Product';
+    vdata(2):='ProviderGLN';
+    reportpck.addfieldheading(vdata);
+
+   select nodeid into arootproductinternalid from node
+     where name=arootproductid and nodetype='p';
+   select nodeid into internalProviderGLNid from node
+     where name='ProviderGLN' and nodetype='a';
+   
+   for p in fetch_sub_products(arootproductinternalid) loop
+      vdata.delete;
+      vdata(1):=p.name;
+	  --Helper function - reads the attribute in selected context / workspace. Can handle inheritance as well, with extra param!
+      vdata(2):=pimviewapipck.getcontextvalue4node(p.nodeid, internalProviderGLNid);
+      reportpck.adddatarow(vdata);
+   end loop;
+  END hierarchy;
+
+BEGIN
+	--Create methods and parameters that can be set in the gui
+    reportregistry.addmethod(vgenlist,'hierarchy','Example reports','Extract hierarchy', 'Extract product hierarchy below given node');
+    reportregistry.addparameter(vgenlist,vparamlist,'context', 'Choose Context',null, true, true);
+    reportregistry.addparameter(vgenlist,vparamlist,'workspace', 'Choose Workspace',null, true, true);
+    reportregistry.addparameter(vgenlist,vparamlist,'product', 'Choose Start product',null, true, true);
+
+END hierarchy;
+/
+
+show error
+
+exec reportregistry.register('hierarchy');
+
+commit;
