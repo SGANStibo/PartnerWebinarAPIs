@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/com.stibosystems.soapdemo/com.stibosystems.soapdemo.iml" filepath="$PROJECT_DIR$/com.stibosystems.soapdemo/com.stibosystems.soapdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SOAP.iml" filepath="$PROJECT_DIR$/SOAP.iml" />
     </modules>
   </component>
 </project>

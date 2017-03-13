@@ -7,6 +7,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="com.stibo.basicesignature.domain-1.1.0-javadoc" level="project" />
   </component>
 </module>

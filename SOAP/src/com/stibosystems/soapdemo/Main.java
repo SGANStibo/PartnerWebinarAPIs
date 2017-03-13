@@ -13,8 +13,10 @@ import java.math.BigInteger;
 public class Main {
 
     public static void main(String[] args) throws GetTopProductFault, QueryByAttributeFault, GetReferencesFault, CreateReferenceFault, QueryByNameFault {
+        String userName = args[0];
+        String password = args[1];
         //Enter username / password here!
-        SOAPClient soapClient = new SOAPClient(args[0], args[1]);
+        SOAPClient soapClient = new SOAPClient(userName, password);
 
         String productAttribute = "ProductName";
         String productAttributeValue = "12069999";
