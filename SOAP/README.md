@@ -1,10 +1,16 @@
+# SOAP
+This project shows the usage of the STEP SOAP webservice
+
+# Usage
 To generate the WSDL files, Java 8 requires that you allow downloading schemas attached to the STEP WSDL file.
 
 Put a jaxp.properties file in your /path/to/jdk1.8.0/jre/lib-folder, and insert the follwing line:
 
 javax.xml.accessExternalSchema = all
 
-After this, to run in IDEA:
+After this, open the project in IDEA.
+
+To run it:
 
 * Right-click project
 * Select Webservices -> Generate Java Code...
