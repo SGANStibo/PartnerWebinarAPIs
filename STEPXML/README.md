@@ -1,4 +1,4 @@
-#STEP XML
+STEP XML
 
 Contains a single STEP XML file for sample purposes.
 
