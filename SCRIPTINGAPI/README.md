@@ -1,5 +1,7 @@
-This folder contains descriptions of a Business Action and a Business Condition.
+# SCRIPTING API
+This folder contains descriptions of a Business Action and a Business Condition, to show a very brief sample of what can be done via the STEP JavaScript API.
 
+# USAGE
 The business condition can be found in the BUSINESSCONDITION sub folder, with screenshots showing the setup.
 
 Vice versa for the Business Action in the BUSINESSACTION sub folder.
