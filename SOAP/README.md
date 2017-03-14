@@ -15,5 +15,5 @@ To run it:
 * Right-click project
 * Select Webservices -> Generate Java Code...
 * Set WSDL URL (point to a test-system WSDL, for instance. The URL is http://testsystem/StepWS/stepws?wsdl) and package prefix (this code is built with com.stibosystems.soapclientclasses)
-* Set username / password in Main.java
+* Set username / password in Main.java (or use arguments to the Main-method)
 * Run Main.java
